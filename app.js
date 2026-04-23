@@ -2,7 +2,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 const supabase = createClient(
   'https://gewxcuajyxtkxukcrwqf.supabase.co',
-  'sb_publishable_F-9lEBEgaXWlRHXM7ns0Lg_2OOh_aSj'
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdld3hjdWFqeXh0a3h1a2Nyd3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NTE5ODYsImV4cCI6MjA5MjUyNzk4Nn0.uAy8E6nUPzEctUd7dw8Ghc7ho1QFczWhFhcvXKT9-IU'
 )
 
 document.getElementById('registerBtn').addEventListener('click', async () => {
