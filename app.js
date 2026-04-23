@@ -1,22 +1,24 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
 
 const supabase = createClient(
   'https://gewxcuajyxtkxukcrwqf.supabase.co',
   'sb_publishable_F-9lEBEgaXWlRHXM7ns0Lg_2OOh_aSj'
 )
 
-document.getElementById('registerBtn').onclick = async () => {
+document.getElementById('registerBtn').addEventListener('click', async () => {
   const email = document.getElementById('email').value
   const password = document.getElementById('password').value
+  const msg = document.getElementById('msg')
   const { error } = await supabase.auth.signUp({ email, password })
-  document.getElementById('msg').style.color = error ? '#f87171' : '#4ade80'
-  document.getElementById('msg').textContent = error ? error.message : '✅ Compte créé ! Vérifie ton email.'
-}
+  msg.style.color = error ? '#f87171' : '#4ade80'
+  msg.textContent = error ? '❌ ' + error.message : '✅ Compte créé !'
+})
 
-document.getElementById('loginBtn').onclick = async () => {
+document.getElementById('loginBtn').addEventListener('click', async () => {
   const email = document.getElementById('email').value
   const password = document.getElementById('password').value
+  const msg = document.getElementById('msg')
   const { error } = await supabase.auth.signInWithPassword({ email, password })
-  document.getElementById('msg').style.color = error ? '#f87171' : '#4ade80'
-  document.getElementById('msg').textContent = error ? error.message : '✅ Connecté !'
-}
+  msg.style.color = error ? '#f87171' : '#4ade80'
+  msg.textContent = error ? '❌ ' + error.message : '✅ Connecté ! 🎉'
+})
