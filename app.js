@@ -1,8 +1,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 const supabase = createClient(
-  'COLLE_TON_URL_ICI',       // ← on le trouve à l'étape 3
-  'COLLE_TA_CLE_ICI'         // ← on le trouve à l'étape 3
+  'https://gewxcuajyxtkxukcrwqf.supabase.co',
+  'sb_publishable_F-9lEBEgaXWlRHXM7ns0Lg_2OOh_aSj'
 )
 
 document.getElementById('registerBtn').onclick = async () => {
